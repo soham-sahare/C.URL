@@ -1,0 +1,66 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  border-radius: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/** CSS Jugaad to manage horizontal overflow. Dont ask me why.**/
+#root {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-feature {
+  width: 100px;
+  height: 100px;
+}
+
+.primary-text {
+  color: #0186da;
+}
+
+.login-form {
+  border: 1px solid #0186da;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.shorten-url-card {
+  width: 90%;
+  border: 1px solid #0186da !important;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.copy-btn {
+  float: right;
+  padding: 2px;
+}
