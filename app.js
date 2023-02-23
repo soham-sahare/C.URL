@@ -6,13 +6,11 @@ const mongoose = require('mongoose');
 const api = require('./api/routes');
 const path = require('path');
 
-//init express app
 const app = express();
 app.use(cors());
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-//connect to mongoDB:
 const { DB_URI } = process.env;
 mongoose
   .connect(DB_URI, {
@@ -30,14 +28,15 @@ mongoose
 app.use('/api', api);
 
 if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
+
+  console.log(process.env.NODE_ENV);
+
   app.use(express.static(path.join(__dirname, 'client/build')));
-  // Handle React routing, return all requests to React app
+
   app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
 
-//configure port and run server
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log('Server running on port ' + port));
